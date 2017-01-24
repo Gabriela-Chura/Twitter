@@ -18,7 +18,7 @@
     function agregarMensaje(){
         
         if(texto.value === ""|| texto.value.length == 0){
-            alert("kfjdf"); 
+            alert("Ingrese una tarea"); 
            lista.removeChild(this.parentNode);
             
         }

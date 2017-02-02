@@ -1,5 +1,41 @@
 
-    var lista = document.getElementById("lista"); 
+var tareasBasicas {
+	this.tarea = _tarea,
+	this.checked = _checking,
+	this.eliminar = _eliminar
+}
+
+
+
+
+
+var listaTareas = [
+	{nombre:"Tarea", isDone: true},
+	{nombre:"T2", isDone:false}
+];
+
+function drawTasksList(){
+	var lista = document.getElementById("lista");
+	for(var i in listaTareas)
+		{
+			var html = "<li><input type='checkbox' "+(listaTareas[i].isDone?"checked":"")+ ">" + listaTareas[1].nombre+ "</li>";
+			lista.innerHTML += html; 
+		}
+}
+
+var nuevaTarea = document.getElementById("botonA");
+nuevaTarea.setAttribute("click","agregarArreglo");
+
+function agregarArreglo() {
+	listaTareas.push();
+}
+
+
+
+
+
+
+    /*var lista = document.getElementById("lista"); 
     var texto = document.getElementById("texto");
     var nuevaTarea = document.getElementById("botonA");
     
@@ -62,7 +98,7 @@
            evt.target.nextSibling.style.textDecoration = "none";
        }
     }
-     
+     */
      
 
     

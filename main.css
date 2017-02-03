@@ -34,17 +34,15 @@
    font-family: 'Play', sans-serif;
 }
 
-.estilo {
+#estilo {
     font-size: 25px;
-    color: salmon;
+    color: white;
     margin: 3px 10px;
     float: right;
 }
 
-.estilo:hover {
-    color: white;
-}
-.squaredTwo {
+
+#squaredTwo {
  
     width: 20px;
     height: 20px;

@@ -1,33 +1,55 @@
+var nuevaTarea = document.getElementById("botonA");
+nuevaTarea.setAttribute("onclick", "onButtonClick()");
 
-var tareasBasicas {
-	this.tarea = _tarea,
-	this.checked = _checking,
-	this.eliminar = _eliminar
+var listaTareas = [];
+
+
+
+function onButtonClick(){
+     var lista = document.getElementById("lista"); 
+     var texto = document.getElementById("texto");
+	
+	
+	 if(texto.value != ""|| texto.value.length != 0){
+           listaTareas.push({nombre:texto.value, isDone: false});
+		 texto.innerHTML="";
+	 } else{
+		 texto.setAttribute("placeholder","Debes agregar una tarea");
+	 }
+	
+	drawTasksList();
 }
-
-var listaTareas = [
-	{nombre:"Tarea", isDone: true},
-	{nombre:"T2", isDone:false}
-];
+	
 
 function drawTasksList(){
 	var lista = document.getElementById("lista");
+	lista.innerHTML="";
 	for(var i in listaTareas)
-		{
-			var html = "<li><input type='checkbox' "+(listaTareas[i].isDone?"checked":"")+ ">" + listaTareas[1].nombre+ "</li>";
+{
+var html = "<li class='twitter' " +
+(listaTareas[i].isDone?"checked style='text-decoration:line-through'": "style='text-decoration:none'")
+ + "><input id='squaredTwo' onclick='selectCheck("+i+")' type='checkbox' "+(listaTareas[i].isDone?"checked": "") + ">" + "<span id='new'>" + listaTareas[i].nombre + "</span><i id='estilo' onclick='deleteSpan("+i+")' class='icon-trash'></i></li>";
 			lista.innerHTML += html; 
 		}
 }
 
-var nuevaTarea = document.getElementById("botonA");
-nuevaTarea.setAttribute("click","agregarArreglo");
-
-function agregarArreglo() {
-	listaTareas.push();
+function selectCheck (_value){
+	if( listaTareas[_value].isDone == false){
+		listaTareas[_value].isDone = true;
+	} else {
+		listaTareas[_value].isDone = false;
+	}
+	
+	drawTasksList();
 }
 
+function deleteSpan(_valor){
+	
+	listaTareas.splice(_valor,1);
+	
+	drawTasksList();
 
-
+}
 
 
 

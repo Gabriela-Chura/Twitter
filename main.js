@@ -5,10 +5,6 @@ var tareasBasicas {
 	this.eliminar = _eliminar
 }
 
-
-
-
-
 var listaTareas = [
 	{nombre:"Tarea", isDone: true},
 	{nombre:"T2", isDone:false}
@@ -54,7 +50,6 @@ function agregarArreglo() {
     function agregarMensaje(){
         
         if(texto.value === ""|| texto.value.length == 0){
-            alert("kfjdf"); 
            lista.removeChild(this.parentNode);
             
         }

@@ -8,7 +8,7 @@ var listaTareas = [];
 function onButtonClick(){
      var lista = document.getElementById("lista"); 
      var texto = document.getElementById("texto");
-	
+	 
 	
 	 if(texto.value != ""|| texto.value.length != 0){
            listaTareas.push({nombre:texto.value, isDone: false});
@@ -17,6 +17,7 @@ function onButtonClick(){
 		 texto.setAttribute("placeholder","Debes agregar una tarea");
 	 }
 	
+	texto.value= ""; 
 	drawTasksList();
 }
 	
